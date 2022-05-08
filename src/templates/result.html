@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Here Is Your Result!</title>
+</head>
+<body>
+<h1>Here Is Your Result for {{ keyword }}!</h1>
+  {% for text, url in list %}
+      <p>{{ text }} </p>
+      <a href="{{ url }}"> Link to the item  </a>
+  {% endfor %}
+</body>
+</html>
