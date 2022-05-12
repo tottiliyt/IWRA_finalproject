@@ -5,3 +5,4 @@ tornado~=6.1
 setuptools~=57.4.0
 flask ~= 2.1.2
 requests ~= 2.27.1
+gunicorn==19.9.0

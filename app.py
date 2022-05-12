@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from web_agent import search
+
 app = Flask(__name__)
 
 
@@ -12,3 +13,7 @@ def home():
 def result():
     res = search(request.args['keyword'])
     return render_template('result.html', keyword=request.args['keyword'], list=res)
+
+
+if __name__ == '__main__':
+    app.run(threaded=True, port=5000)

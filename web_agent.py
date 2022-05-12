@@ -1,15 +1,11 @@
-import logging
 import random
 import re
-import sys
 import json
 import time
 
 from bs4 import BeautifulSoup, Comment
-from queue import Queue
-from urllib import parse, request
 import requests
-from difflib import SequenceMatcher
+
 
 def extract_information(address, html):
     '''Extract contact information from html, returning a list of (url, category, content) pairs,
@@ -43,7 +39,6 @@ def read_shopping_site():
 
 
 def read_search_page(url):
-
     headers = {
         'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Mobile Safari/537.36',
         'Accept-Language': 'en'
@@ -70,25 +65,28 @@ def tag_visible(element):
         return False
     return True
 
+
 def search(keyword):
-    search_query = keyword.replace(' ', '+')
-    sites = read_shopping_site()
+    return []
 
-    for site, search_url in sites.items():
-        # need more cases
-        pagination = '&page='
-        if site == 'bestbuy':
-            pagination = '&cp='
-        if site == 'ebay':
-            pagination = '&_pgn='
-
-        text = []
-        base_url = search_url + search_query
-        for i in range(1,11):
-            url = base_url + pagination + str(i)
-            print("processing " + url)
-            text.append(read_search_page(url))
-        writelines(site + "_text", text)
+    # search_query = keyword.replace(' ', '+')
+    # sites = read_shopping_site()
+    #
+    # for site, search_url in sites.items():
+    #     # need more cases
+    #     pagination = '&page='
+    #     if site == 'bestbuy':
+    #         pagination = '&cp='
+    #     if site == 'ebay':
+    #         pagination = '&_pgn='
+    #
+    #     text = []
+    #     base_url = search_url + search_query
+    #     for i in range(1, 11):
+    #         url = base_url + pagination + str(i)
+    #         print("processing " + url)
+    #         text.append(read_search_page(url))
+    #     writelines(site + "_text", text)
 
 
 def main():
