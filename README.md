@@ -35,7 +35,11 @@ This is a metashopper that support these websites:
 
 3. Bestbuy
 
-4. Ebay
+4. eBay
+
+#### Deployed Heruko link:
+
+#### If you prefer to build and run on your machine:
 
 #### 1. Setup Virtual Environment
 We recommend creating a [Python virtual environment](https://docs.python.org/3/tutorial/venv.html)
