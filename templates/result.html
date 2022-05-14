@@ -5,10 +5,14 @@
     <title>Here Is Your Result!</title>
 </head>
 <body>
-<h1>Here Is Your Result for {{ keyword }}!</h1>
-  {% for text, url in list %}
-      <p>{{ text }}   <a href="  {{ url }}"> Link to the item  </a> </p>
-
+<h1>Here Is Your Result for "{{ keyword }}"!</h1>
+<h3>Sorted by {{ option }}</h3>
+  {% for item in result %}
+  <tr>
+    <td>{{ item[0] }}</td>
+    <td>{{ item[1] }}</td>
+    <td><a href="  {{ item[2] }}"> Link to the item  </a> </p></td>
+  </tr>
   {% endfor %}
 </body>
 </html>

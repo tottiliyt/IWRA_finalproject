@@ -11,9 +11,12 @@ def home():
 
 @app.route('/result')
 def result():
-    res = search(request.args['keyword'])
-    return render_template('result.html', keyword=request.args['keyword'], list=res)
-
+    df = search(request.args['keyword'], request.args['option'])
+    return render_template(
+        'result.html', 
+        keyword=request.args['keyword'], 
+        option=request.args['option'],
+        result=df.to_numpy())
 
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)

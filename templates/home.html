@@ -7,8 +7,14 @@
 <body>
 <h1>What do you want to buy?</h1>
 <form action="result">
-    <label for="keyword">Enter Keyword</label>
-    <input type="text" name="keyword" value="" required>
+    <label for="keyword">Enter Keyword:</label>
+    <input type="text" name="keyword" value="" required size="30">
+    <label for="option">Sort by:</label>
+    <select name="option" id="option-select">
+        <option value="price">Price</option>
+        <option value="relevance">Relevance</option>
+        <option value="source">Source</option>
+    </select>
     <input type="submit" value="Submit">
 </form>
 
