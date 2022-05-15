@@ -21,3 +21,4 @@ scikit_learn==1.1.0
 toml==0.10.2
 tornado==6.1
 zipp==3.6.0
+gunicorn == 20.1.0
